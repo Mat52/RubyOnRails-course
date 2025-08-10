@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
     def product_params #added params to handle with form
-      params.expect(product: [ :name ]) 
+      params.expect(product: [ :name, :description ]) 
     end
 
 end
