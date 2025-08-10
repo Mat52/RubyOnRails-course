@@ -16,9 +16,12 @@ Rails.application.routes.draw do
 
     get "/products/:id/edit", to: "products#edit" #Edit - Renders a form for updating a specific record
     patch "/products/:id", to: "products#update" # Update (full) - Handles the edit form submission, handling errors and updating the entire record, and typically triggered by a PUT request.
-    put "/products/:id", to: "products#update"
+    put "/products/:id", to: "products#update" # Update (partial) - Handles the edit form submission, handling errors and updating specific attributes of the record, and typically triggered by a PATCH request.
 
-    delete "/products/:id", to: "products#destroy"
+    delete "/products/:id", to: "products#destroy" #destroy - Handles deleting a specific record
+  # resources :products  - shorter version to get all of them in on line
+  # rails routes - command to show all routes in application
+
 
   end
 
