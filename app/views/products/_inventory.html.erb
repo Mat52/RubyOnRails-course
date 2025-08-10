@@ -1,0 +1,7 @@
+<% if product.inventory_count.to_i == 0 %>
+<p>Email me when the product will be available:</p>
+    <%= form_with model: [product, Subscriber.new] do |form| %>
+    <%= form.email_field :email, placeholder: "you@example.com", required: true %>
+    <%= form.submit "Submit" %>
+    <% end %>
+<% end %>

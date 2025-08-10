@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
   root "products#index"
-  resources :products # - shorter version to get all of them in on line
+  resources :products do
+    resources :subscribers, only: [ :create ]
+  end # - shorter version to get all of them in on line
   # rails routes - command to show all routes in application
 
 

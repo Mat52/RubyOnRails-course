@@ -16,6 +16,7 @@
     </div>
      <div>
       Inventory count: <%= product.inventory_count.to_i > 0 ? product.inventory_count : "Out of stock" %>
+      <%= render "inventory", product: product %>
     </div>
     <div>
       <%= link_to "Show Product", product %>
