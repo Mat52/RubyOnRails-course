@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show edit update destroy ] #we can use it before functions in this example before show edit and update we ivoke function that is determined in the bottom 
+  before_action :set_product, only: %i[ show edit update destroy ] #we can use it before functions in this example before show edit and update we ivoke function that is determined in the bottom
+  allow_unauthenticated_access only: %i[ index show ] #add option to allow unauthenticated users to show index and show only
   def index
     @products = Product.all # instance variable to share view between controllers
   end
