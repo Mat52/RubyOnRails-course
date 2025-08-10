@@ -14,6 +14,9 @@
     <div>
       Created at: <%= product.created_at %>
     </div>
+     <div>
+      Inventory count: <%= product.inventory_count.to_i > 0 ? product.inventory_count : "Out of stock" %>
+    </div>
     <div>
       <%= link_to "Show Product", product %>
     </div>
