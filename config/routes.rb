@@ -8,21 +8,7 @@ Rails.application.routes.draw do
 
   Rails.application.routes.draw do
 
-    root "products#index" # root route to render on main site
-
-    get "/products", to: "products#index" # index shows all the records
-
-    get "/products/new", to: "products#new" # renders a form for creating a new record
-    post "/products", to: "products#create" # Processes the new form submission, handling errors and creating the record
-
-    get "/products/:id", to: "products#show"  # Show - Renders a specific record for viewing
-
-    get "/products/:id/edit", to: "products#edit" #Edit - Renders a form for updating a specific record
-    patch "/products/:id", to: "products#update" # Update (full) - Handles the edit form submission, handling errors and updating the entire record, and typically triggered by a PUT request.
-    put "/products/:id", to: "products#update" # Update (partial) - Handles the edit form submission, handling errors and updating specific attributes of the record, and typically triggered by a PATCH request.
-
-    delete "/products/:id", to: "products#destroy" #destroy - Handles deleting a specific record
-  # resources :products  - shorter version to get all of them in on line
+  resources :products # - shorter version to get all of them in on line
   # rails routes - command to show all routes in application
 
 
