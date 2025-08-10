@@ -2,5 +2,6 @@
 <h1>ID: <%= @product.id =%></h1>
 <h1>Name of product: <%= @product.name =%></h1>
 <h2>Date of creation: <%= @product.created_at =%></h2>
+<%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
 <%= link_to "Back", products_path %>
 

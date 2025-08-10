@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show edit update ] #we can use it before functions in this example before show edit and update we ivoke function that is determined in the bottom 
+  before_action :set_product, only: %i[ show edit update destroy ] #we can use it before functions in this example before show edit and update we ivoke function that is determined in the bottom 
   def index
     @products = Product.all # instance variable to share view between controllers
   end
@@ -29,6 +29,11 @@ class ProductsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+  
+  def destroy
+    @product.destroy
+    redirect_to products_path
   end
 
   private
