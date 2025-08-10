@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   root "products#index"
   resources :products do
     resources :subscribers, only: [ :create ]
+    resource :unsubscribe, only: [ :show ]
+
   end # - shorter version to get all of them in on line
   # rails routes - command to show all routes in application
 
