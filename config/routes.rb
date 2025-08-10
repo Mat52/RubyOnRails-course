@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
 
   Rails.application.routes.draw do
+
+    root "products#index" # root route to render on main site
+
     get "/products", to: "products#index" # index shows all the records
 
     get "/products/new", to: "products#new" # renders a form for creating a new record
