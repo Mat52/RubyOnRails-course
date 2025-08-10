@@ -17,15 +17,17 @@
     <div>
       <%= link_to "Show Product", product %>
     </div>
+    <% if authenticated?%>
     <div>
-      <%= link_to "Edit", edit_product_path(product) if authenticated? %>
+      <%= link_to "Edit", edit_product_path(product)%>
     </div>
 
     <div>
-      <%= button_to "Delete", product, method: :delete, data: { turbo_confirm: "Are you sure?" } if authenticated? %>
+      <%= button_to "Delete", product, method: :delete, data: { turbo_confirm: "Are you sure?" }%>
     </div>
+    <% end %>
     </br>
   <% end %>
 
-   <%= link_to "Add a new product", new_product_path if authenticated? %>
+   <%= link_to "Add a new product", new_product_path %>
 </div>
