@@ -1,4 +1,4 @@
-<h1>New Product</h1>
+<h1>Product id: <%= product.id %> </h1>
 
 <%= form_with model: @product do |form| %>
   <div>
@@ -7,8 +7,6 @@
   </div>
   </br>
   <div>
-    <%= form.submit "Create Product" %>
+    <%= form.submit "Update Product" %>
   </div>
-
-  <%= link_to "Back", products_path %>
 <% end %>

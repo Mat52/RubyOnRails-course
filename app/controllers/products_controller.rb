@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: %i[ show edit update ] #we can use it before functions in this example before show edit and update we ivoke function that is determined in the bottom 
   def index
     @products = Product.all # instance variable to share view between controllers
   end
 
   def show
-    @product = Product.find(params[:id])  # Add function to show product with the id specified in request R in CRUD model 
   end
 
   def new
@@ -20,7 +20,21 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @product.update(product_params)
+      redirect_to @product
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
+    def set_product
+      @product = Product.find(params[:id])
+    end
     def product_params #added params to handle with form
       params.expect(product: [ :name ]) 
     end
