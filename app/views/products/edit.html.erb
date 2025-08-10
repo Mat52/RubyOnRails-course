@@ -1,12 +1,3 @@
-<h1>Product id: <%= product.id %> </h1>
-
-<%= form_with model: @product do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  </br>
-  <div>
-    <%= form.submit "Update Product" %>
-  </div>
-<% end %>
+<h1>Edit the name of the <%= @product.name =%> with id <%= @product.id =%> </h1>
+<%= render "form", product: @product %>
+<%= link_to "Back", products_path %>
